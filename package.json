@@ -1,0 +1,8 @@
+{
+  "name": "Exercises-for-Programmers",
+  "version": "1.0.0",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "readline-sync": "^1.4.10"
+  }
+}
