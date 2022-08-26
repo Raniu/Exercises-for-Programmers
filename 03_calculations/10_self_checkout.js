@@ -10,12 +10,12 @@ const rl = readlinePromises.createInterface({
     let items = [];
     let index = 0;
     while(true) {
-        let price = await rl.question(`Price of item ${index+1} : `)
-        if(price === ''){
+        let price = await getNumber(`Price of item ${index+1} : `)
+        if(isNaN(price)){
             break;
         }
         let quantity = await getNumber(`Quantity of item ${index+1} : `)
-        if(quantity === ''){
+        if(isNaN(quantity)){
             break;
         }
         items.push({price, quantity})
@@ -33,14 +33,20 @@ const rl = readlinePromises.createInterface({
 
 async function getNumber(input) {
     let number;
-
-    while (true) {
+    
+    do {
         number = await rl.question(input);
-        if(!isNaN(number) && number > 0) {
-            return parseFloat(number);
-            break;
-        }
-    }
+    } while (!((!isNaN(number) && number > 0) || (number === '')))
+    return parseFloat(number);
+    // while (true) {
+    //     number = await rl.question(input);
+    //     if(!isNaN(number) && number > 0) {
+    //         return parseFloat(number);
+    //         break;
+    //     } else if(){
+    //
+    //     }
+    // }
 }
 
 function calcSubtotal(items){
