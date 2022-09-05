@@ -18,8 +18,8 @@ function isAnagram(string1, string2) {
         return;
     }
 
-    let str1 = string1.split('').sort().join(' ');
-    let str2 = string2.split('').sort().join(' ');
+    let str1 = string1.replace(/[^\w]/g, '').split('').sort().join(' ');
+    let str2 = string2.replace(/[^\w]/g, '').split('').sort().join(' ');
 
     return str1 === str2;
 }
