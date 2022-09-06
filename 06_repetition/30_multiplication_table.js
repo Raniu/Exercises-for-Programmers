@@ -1,4 +1,3 @@
-// 곱셈표 작성 추가하기
 const rd = require('../util/util-question');
 
 (async () => {
