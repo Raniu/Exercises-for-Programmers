@@ -7,6 +7,7 @@ const rd = require('../util/util-question');
     let min;
     let max;
 
+    // 숫자 입력 받기
     while(true) {
         inputNumber = await rd.question(`Enter a number: `)
         // 입력 받은 값이 숫자이면 배열에 push
